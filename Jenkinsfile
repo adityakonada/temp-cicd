@@ -1,7 +1,7 @@
 pipeline {
 	agent any
-	// tools {
-	// 	nodejs 'NodeJS'
+	tools {
+		nodejs 'NodeJS'
 	// }
 	// environment {
 	// 	SONAR_PROJECT_KEY = 'complete-cicd-02'
@@ -20,12 +20,12 @@ pipeline {
 				git branch: 'main', credentialsId: 'jen-git-dind', url: 'https://github.com/adityakonada/temp-cicd.git'
 			}
 		}
-		// stage('Unit Test'){
-		// 	steps {
-		// 		sh 'npm test'
-		// 		sh 'npm install'		
-		// 	}
-		// }
+		stage('Unit Test'){
+		 	steps {
+		 		sh 'npm test'
+		 		sh 'npm install'		
+		 	}
+		}
 		// stage('SonarQube Analysis'){
 		// 	steps {
 		// 		withCredentials([string(credentialsId: 'complete-cicd-02-token', variable: 'SONAR_TOKEN')]) {
